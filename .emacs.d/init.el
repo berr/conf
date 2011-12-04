@@ -3,5 +3,3 @@
 (load "~/.emacs.d/latex.el")
 (load "~/.emacs.d/dev.el")
 (load "~/.emacs.d/cedet.el")
-(load "~/.emacs.d/epos.el")
-(load "~/.emacs.d/tweet.el")
