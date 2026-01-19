@@ -1,1 +1,0 @@
-inserir /n no replace: C-q C-j

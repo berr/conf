@@ -1,0 +1,15 @@
+try-build:
+    nixos-rebuild --flake . dry-build
+
+build:
+    nixos-rebuild --flake . build
+
+update:
+    nix flake update
+
+switch:
+    sudo nixos-rebuild --flake . switch
+
+clean:
+    nix-store --gc
+    sudo nix-collect-garbage -d
