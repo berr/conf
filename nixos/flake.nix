@@ -31,7 +31,13 @@
           }
         ];
       };
+    };
 
+    homeConfigurations = {
+      berr = home-manager.lib.homeManagerConfiguration {
+        inherit nixpkgs;
+        modules = [./nixos/home.nix];
+      };
     };
   };
 

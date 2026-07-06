@@ -12,7 +12,7 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "berr";
 
-  networking.hostName = "baphomet"; # Define your hostname.
+  networking.hostName = "baphomet";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Sao_Paulo";
@@ -132,23 +132,18 @@
   environment.systemPackages = with pkgs; [
       dnsmasq # required for libvirt networking
       openrgb
-      glibc
       lm_sensors
       kdePackages.krohnkite
-
       qjackctl
       pwvucontrol
 
-      yabridge
-      yabridgectl
-      unstable.wineWow64Packages.staging
-      unstable.winetricks
-
-      file
-
-      neural-amp-modeler-lv2
-      lsp-plugins
-      guitarix
+      # yabridge
+      # yabridgectl
+      # unstable.wineWow64Packages.staging
+      # unstable.winetricks
+      # neural-amp-modeler-lv2
+      # lsp-plugins
+      # guitarix
   ];
 
   # Configure smart:
