@@ -136,6 +136,7 @@
       kdePackages.krohnkite
       qjackctl
       pwvucontrol
+      home-manager
 
       # yabridge
       # yabridgectl
