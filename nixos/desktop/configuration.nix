@@ -80,6 +80,10 @@
   security.rtkit.enable = true;
   # Virtualization
   programs.virt-manager.enable = true;
+
+  # Can't be handled by home manager
+  programs.steam.enable = true;
+
   virtualisation.docker = {
     enable = true;
   };
@@ -99,6 +103,7 @@
     ];
 
   };
+
 
   environment.systemPackages = with pkgs; [
     dnsmasq # required for libvirt networking

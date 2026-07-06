@@ -5,6 +5,8 @@
   ...
 }:
 {
+  stateVersion = "25.11";
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -41,57 +43,65 @@
     withPython3 = false;
   };
 
+  programs.steam = true;
+
   fonts.fontconfig.enable = true;
 
   home = {
 
     packages = with pkgs; [
+      home-manager
+
       # Needed for config management
       git
       just
-      rclone
       nixfmt
+      rclone
 
-      # Terminal tools
-      tmux
-      htop
-      iotop
-      sysstat
-      lm_sensors
+      nerd-fonts.jetbrains-mono
+
+      # linux specific
       ethtool
+      iotop
+      lm_sensors
       pciutils
-      usbutils
-      unrar
-      p7zip
-      lsof
-      curl
-      wget
-      ripgrep
-      # Network management
-      nmap
-      tcpdump
+      sysstat
       traceroute
-      bind
-      wireshark
-
-      # Development
-      gnumake
-      pkg-config
-      rustup
-      python315
-      uv
-      gcc
-      nodejs
-      lazygit
+      usbutils
       # Virt
       lxc
       virt-manager
-      # Language servers
-      pyright
-      lua-language-server
-
-      nerd-fonts.jetbrains-mono
       wl-clipboard
+
+      # Terminal tools
+      alacritty
+      curl
+      htop
+      lsof
+      p7zip
+      ripgrep
+      tmux
+      unrar
+      wget
+      # Network management
+      bind
+      nmap
+      tcpdump
+      wireshark
+
+      # Development
+      gcc
+      gnumake
+      lazygit
+      nodejs
+      pkg-config
+      python315
+      rustup
+      uv
+      # Language servers
+      lua-language-server
+      pyright
+
 
       keepassxc
 
@@ -117,16 +127,9 @@
       super-productivity
 
       discord
-      slack
-
-      alacritty
       jetbrains.rust-rover
     ];
 
-    username = "berr";
-    homeDirectory = "/home/berr";
-
-    stateVersion = "25.11";
 
     file.git = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/git/gitconfig";
@@ -150,19 +153,4 @@
 
   };
 
-  systemd.user.services.mount_secrets = {
-    Unit = {
-      After = [ "network.target" ];
-      Description = "Mount secrets from gdrive using rclone";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.rclone}/bin/rclone mount Drive:Secrets ${config.home.homeDirectory}/Documents/Drive/Secrets";
-      Restart = "on-failure";
-      RestartSec = "5";
-    };
-  };
 }
