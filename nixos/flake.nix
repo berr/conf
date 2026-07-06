@@ -9,28 +9,38 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
-  let 
-    inherit (self) outputs;
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; config.allowUnfree = true;};
-  in {
-    overlays = import ./overlays {inherit inputs;};
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      inherit (self) outputs;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      overlays = import ./overlays { inherit inputs; };
 
-    nixosConfigurations = {
-      baphomet = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./configuration.nix
-        ];
+      nixosConfigurations = {
+        baphomet = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./desktop/configuration.nix
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        berr = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./desktop/home.nix ];
+        };
       };
     };
-
-    homeConfigurations = {
-      berr = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./home.nix];
-      };
-    };
-  };
 }

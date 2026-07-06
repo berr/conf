@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   programs.bash = {
     enable = true;
@@ -6,7 +11,6 @@
     bashrcExtra = "source ${config.home.homeDirectory}/config/bash/bashrc_tail.sh";
   };
 
-   
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -16,20 +20,28 @@
     history.size = 10000;
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "rust" "python" "pyenv" "uv"];
+      plugins = [
+        "git"
+        "rust"
+        "python"
+        "pyenv"
+        "uv"
+      ];
       theme = "philips";
     };
   };
 
   programs.neovim = {
-     enable = true;
-     sideloadInitLua = true;
-     defaultEditor = true;
-     viAlias = true;
-     vimAlias = true;
-     withRuby = false;
-     withPython3 = false;
+    enable = true;
+    sideloadInitLua = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    withRuby = false;
+    withPython3 = false;
   };
+
+  programs.steam = true;
 
   fonts.fontconfig.enable = true;
 
@@ -40,7 +52,8 @@
       git
       just
       rclone
-    
+      nixfmt
+
       # Terminal tools
       tmux
       htop
@@ -94,7 +107,7 @@
       audacity
       spotify
       strawberry
-      
+
       vlc
 
       obs-studio
@@ -117,42 +130,41 @@
 
     stateVersion = "25.11";
 
-    file.git =  {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/git/gitconfig";
-        target = "./.gitconfig";
+    file.git = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/git/gitconfig";
+      target = "./.gitconfig";
     };
 
-    file.neovim =  {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/nvim";
-        target = "./.config/nvim";
+    file.neovim = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/nvim";
+      target = "./.config/nvim";
     };
 
-    file.tmux =  {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/tmux";
-        target = "./.config/tmux";
+    file.tmux = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/tmux";
+      target = "./.config/tmux";
     };
 
-    file.alacritty =  {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/alacritty";
-        target = "./.config/alacritty";
+    file.alacritty = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/alacritty";
+      target = "./.config/alacritty";
     };
 
-    };
+  };
 
-    systemd.user.services.mount_secrets = {
-        Unit = {
-            After = [ "network.target" ];
-            Description = "Mount secrets from gdrive using rclone";
-        };
-        Install = {
-            WantedBy = [ "default.target" ] ;
-        };
-        Service = {
-            Type = "simple";
-            ExecStart = ''${pkgs.rclone}/bin/rclone mount Drive:Secrets ${config.home.homeDirectory}/Documents/Drive/Secrets'';
-            Restart = "on-failure";
-            RestartSec = "5";
-        };
+  systemd.user.services.mount_secrets = {
+    Unit = {
+      After = [ "network.target" ];
+      Description = "Mount secrets from gdrive using rclone";
     };
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount Drive:Secrets ${config.home.homeDirectory}/Documents/Drive/Secrets";
+      Restart = "on-failure";
+      RestartSec = "5";
+    };
+  };
 }
-
