@@ -44,7 +44,7 @@
   };
 
   networking = {
-    hostName = "baphomet";
+    hostName = "delta";
     networkmanager.enable = true;
     firewall.enable = false;
   };

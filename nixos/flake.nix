@@ -37,7 +37,7 @@
       };
 
       homeConfigurations = {
-        berr = home-manager.lib.homeManagerConfiguration {
+        "berr@delta" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./desktop/home.nix ];
         };
