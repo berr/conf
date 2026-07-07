@@ -1,15 +1,17 @@
 [user]
-	name = Felipe Silveira
-	email = root@berr.dev
+  name = Felipe Silveira
+  email = root@berr.dev
 
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	st = status
-	ci = commit
-	co = checkout
-	br = branch
-	rb = rebase
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  rb = rebase
 [push]
-	default = simple
+  default = simple
 [credential]
-	helper = cache --timeout=300
+  helper = cache --timeout=300
+[pull]
+	ff = only
