@@ -6,23 +6,18 @@
 }:
 let
   base_pkgs = with pkgs; [
-      wireshark
+    wireshark
 
+    audacity
 
-      audacity
+    keepassxc
 
-      keepassxc
+    picard
 
-      picard
+    firefox-bin
+    google-chrome
 
-
-      firefox-bin
-      google-chrome
-
-      # obsidian
-      # super-productivity
-
-      discord
+    discord
   ];
   linux_only_pkgs =
     if pkgs.stdenv.isLinux then
@@ -32,9 +27,11 @@ let
         ardour
         obs-studio
         krita
-      rawtherapee
-      strawberry
-      vlc
+        rawtherapee
+        strawberry
+        vlc
+        obsidian
+        super-productivity
       ]
     else
       [ ];
@@ -44,7 +41,6 @@ in
   home = {
 
     packages = base_pkgs ++ linux_only_pkgs;
-
 
   };
 
