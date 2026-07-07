@@ -1,14 +1,17 @@
-try-build:
-    nixos-rebuild --flake . dry-build
+build-home:
+    home-manager --flake . build
 
-build:
+switch-home:
+    home-manager --flake . build
+
+build-os:
     nixos-rebuild --flake . build
+
+switch-os:
+    sudo nixos-rebuild --flake . switch
 
 update:
     nix flake update
-
-switch:
-    sudo nixos-rebuild --flake . switch
 
 clean:
     nix-store --gc
