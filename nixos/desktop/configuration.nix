@@ -104,7 +104,6 @@
 
   };
 
-
   environment.systemPackages = with pkgs; [
     dnsmasq # required for libvirt networking
     openrgb

@@ -1,4 +1,3 @@
-
 {
   lib,
   pkgs,
@@ -33,10 +32,8 @@
     };
   };
 
-
-    home = {
-        packages = with pkgs; [
-            # Needed for config management
+  home.packages = with pkgs; [
+      # Needed for config management
       git
       just
       nixfmt
@@ -57,6 +54,5 @@
       nmap
       tcpdump
       wireshark
-        ];
-    };
+    ];
 }

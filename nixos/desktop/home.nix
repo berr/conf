@@ -13,27 +13,13 @@
     ../common/graphical-apps.nix
   ];
 
-
   home = {
 
     username = "berr";
     homeDirectory = "/home/berr";
     stateVersion = "25.11";
 
-    packages = with pkgs; [
-      # linux specific
-      ethtool
-      iotop
-      lm_sensors
-      pciutils
-      sysstat
-      traceroute
-      usbutils
-      # Virt
-      lxc
-      virt-manager
-      wl-clipboard
-    ];
+    packages = with pkgs; [ ];
   };
 
   systemd.user.services.mount_secrets = {

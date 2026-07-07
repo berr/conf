@@ -26,7 +26,6 @@
       obs-studio
       vlc
 
-
       firefox-bin
       google-chrome
 
