@@ -5,8 +5,6 @@
   ...
 }:
 {
-  stateVersion = "25.11";
-
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -43,8 +41,6 @@
     withPython3 = false;
   };
 
-  programs.steam = true;
-
   fonts.fontconfig.enable = true;
 
   home = {
@@ -59,19 +55,6 @@
       rclone
 
       nerd-fonts.jetbrains-mono
-
-      # linux specific
-      ethtool
-      iotop
-      lm_sensors
-      pciutils
-      sysstat
-      traceroute
-      usbutils
-      # Virt
-      lxc
-      virt-manager
-      wl-clipboard
 
       # Terminal tools
       alacritty
