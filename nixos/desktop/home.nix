@@ -6,7 +6,11 @@
 }:
 {
   imports = [
-    ../common/common_home.nix
+    ../common/configs.nix
+    ../common/terminal-tools.nix
+    ../common/development.nix
+    ../common/fonts.nix
+    ../common/graphical-apps.nix
   ];
 
 
