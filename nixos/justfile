@@ -2,7 +2,7 @@ build-home:
     home-manager --flake . build
 
 switch-home:
-    home-manager --flake . build
+    home-manager --flake . switch 
 
 build-os:
     nixos-rebuild --flake . build

@@ -33,6 +33,8 @@
   };
 
   home.packages = with pkgs; [
+      home-manager
+
       # Needed for config management
       git
       just

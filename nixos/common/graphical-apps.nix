@@ -6,26 +6,21 @@
 }:
 let
   base_pkgs = with pkgs; [
-      keepassxc
-
       wireshark
 
-      krita
-      rawtherapee
 
       audacity
 
-      picard
-      spotify
-      strawberry
+      keepassxc
 
-      vlc
+      picard
+
 
       firefox-bin
       google-chrome
 
-      obsidian
-      super-productivity
+      # obsidian
+      # super-productivity
 
       discord
   ];
@@ -36,6 +31,10 @@ let
         gimp
         ardour
         obs-studio
+        krita
+      rawtherapee
+      strawberry
+      vlc
       ]
     else
       [ ];
@@ -44,8 +43,8 @@ in
 {
   home = {
 
-    packages = with pkgs; [
-    ];
+    packages = base_pkgs ++ linux_only_pkgs;
+
 
   };
 
