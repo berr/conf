@@ -18,9 +18,7 @@
     }:
     let
       inherit (self) outputs;
-      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        inherit system;
         config.allowUnfree = true;
       };
     in
@@ -40,6 +38,11 @@
         "berr@delta" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./desktop/home.nix ];
+        };
+        "berr@epsilon" = home-manager.lib.homeManagerConfiguration {
+          # inherit pkgs;
+          pkgs = import nixpkgs { config.allowUnfree = true; system = "aarch64-darwin"; };
+          modules = [ ./laptop/home.nix ];
         };
       };
     };

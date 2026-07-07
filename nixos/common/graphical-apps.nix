@@ -4,26 +4,21 @@
   config,
   ...
 }:
-{
-  home = {
-
-    packages = with pkgs; [
+let
+  base_pkgs = with pkgs; [
       keepassxc
 
       wireshark
 
-      gimp
       krita
       rawtherapee
 
-      ardour
       audacity
 
       picard
       spotify
       strawberry
 
-      obs-studio
       vlc
 
       firefox-bin
@@ -33,6 +28,23 @@
       super-productivity
 
       discord
+  ];
+  linux_only_pkgs =
+    if pkgs.stdenv.isLinux then
+      with pkgs;
+      [
+        gimp
+        ardour
+        obs-studio
+      ]
+    else
+      [ ];
+
+in
+{
+  home = {
+
+    packages = with pkgs; [
     ];
 
   };
