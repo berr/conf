@@ -25,4 +25,9 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/alacritty";
     target = "./.config/alacritty";
   };
+
+  home.file.starship = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/starship/starship.toml";
+    target = "./.config/starship.toml";
+  };
 }

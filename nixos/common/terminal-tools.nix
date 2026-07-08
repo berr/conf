@@ -21,19 +21,16 @@
     history.size = 10000;
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "rust"
-        "python"
-        "pyenv"
-        "uv"
-      ];
-      theme = "philips";
     };
+
+    initContent = "source ${config.home.homeDirectory}/config/zsh/zshrc";
+      
   };
 
   home.packages = with pkgs; [
       home-manager
+
+      starship 
 
       # Needed for config management
       git
