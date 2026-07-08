@@ -26,7 +26,7 @@
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
-        baphomet = nixpkgs.lib.nixosSystem {
+        delta = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./desktop/configuration.nix

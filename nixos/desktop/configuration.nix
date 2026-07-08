@@ -65,6 +65,7 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  programs.zsh.enable = true;
   users.users.berr = {
     isNormalUser = true;
     description = "Felipe Silveira";
@@ -75,6 +76,7 @@
       "docker"
     ];
     packages = with pkgs; [ ];
+    shell = pkgs.zsh;
   };
 
   security.rtkit.enable = true;

@@ -17,6 +17,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    defaultKeymap = "emacs";
 
     history.size = 10000;
     oh-my-zsh = {

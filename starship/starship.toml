@@ -24,7 +24,7 @@ style_user = 'green'
 ssh_only = false
 aliases = {"epsilon" = "ε", "delta" = "δ"}
 format = '[$hostname]($style)[$ssh_symbol](red):'
-ssh_symbol = ' (ssh)'
+ssh_symbol = '\(ssh\)'
 style = 'green'
 
 [directory]

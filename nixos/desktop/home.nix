@@ -18,8 +18,6 @@
     username = "berr";
     homeDirectory = "/home/berr";
     stateVersion = "25.11";
-
-    packages = with pkgs; [ ];
   };
 
   systemd.user.services.mount_secrets = {
