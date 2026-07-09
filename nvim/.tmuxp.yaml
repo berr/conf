@@ -1,0 +1,7 @@
+session_name: Nvim Config
+start_directory: ./
+windows:
+  - layout: even-horizontal
+    panes:
+      - shell_command: nvim ./lua/plugins.lua
+      - shell_command: ls

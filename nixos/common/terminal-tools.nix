@@ -47,6 +47,7 @@
     p7zip
     ripgrep
     tmux
+    tmuxp
     unrar
     wget
     # Network management
