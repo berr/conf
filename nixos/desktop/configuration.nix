@@ -91,9 +91,6 @@
 
   # Allow unfree packages
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
     config.permittedInsecurePackages = [
       "docker-28.5.2"
       "electron-39.8.10"

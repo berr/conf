@@ -1,6 +1,7 @@
 session_name: Nix Config
+start_directory: ./
 windows:
   - layout: even-horizontal
     panes:
       - shell_command: nvim flake.nix
-      - shell_command: ls
+      - shell_command: 
