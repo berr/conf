@@ -16,19 +16,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   services = {
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "berr";
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
-
-    # TODO: Compare X11 vs Wayland and disable one
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
+    displayManager = {
+      autoLogin.enable = true;
+      autoLogin.user = "berr";
+      sddm.enable = true;
     };
+
+    desktopManager.plasma6.enable = true;
 
     openssh.enable = true;
     printing.enable = true;
@@ -69,6 +63,7 @@
   users.users.berr = {
     isNormalUser = true;
     description = "Felipe Silveira";
+
     extraGroups = [
       "networkmanager"
       "wheel"

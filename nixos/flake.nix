@@ -36,12 +36,18 @@
 
       homeConfigurations = {
         "berr@delta" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
+          pkgs = import nixpkgs {
+            config.allowUnfree = true;
+            system = "x86_64-linux";
+          };
           modules = [ ./desktop/home.nix ];
         };
         "berr@epsilon" = home-manager.lib.homeManagerConfiguration {
           # inherit pkgs;
-          pkgs = import nixpkgs { config.allowUnfree = true; system = "aarch64-darwin"; };
+          pkgs = import nixpkgs {
+            config.allowUnfree = true;
+            system = "aarch64-darwin";
+          };
           modules = [ ./laptop/home.nix ];
         };
       };

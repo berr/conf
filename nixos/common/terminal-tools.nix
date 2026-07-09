@@ -25,34 +25,34 @@
     };
 
     initContent = "source ${config.home.homeDirectory}/config/zsh/zshrc";
-      
+
   };
 
   home.packages = with pkgs; [
-      home-manager
+    home-manager
 
-      starship 
+    starship
 
-      # Needed for config management
-      git
-      just
-      nixfmt
-      rclone
+    # Needed for config management
+    git
+    just
+    nixfmt
+    rclone
 
-      # Terminal tools
-      alacritty
-      curl
-      htop
-      lsof
-      p7zip
-      ripgrep
-      tmux
-      unrar
-      wget
-      # Network management
-      bind
-      nmap
-      tcpdump
-      wireshark
-    ];
+    # Terminal tools
+    alacritty
+    curl
+    htop
+    lsof
+    p7zip
+    ripgrep
+    tmux
+    unrar
+    wget
+    # Network management
+    bind
+    nmap
+    tcpdump
+    wireshark
+  ];
 }
