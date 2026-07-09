@@ -1,16 +1,11 @@
 # "$schema" = 'https://starship.rs/config-schema.json'
-add_newline = true
+add_newline = true 
 
-format = "$nix_shell$rust$python$lua$git_branch$git_state$git_status$fill$time\n$username$hostname$directory" 
+format = "$status$cmd_duration$time$directory$fill$nix_shell$git_branch$git_state$git_status\n$username$hostname$character"
 
-
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[\\$](bold green)'
-error_symbol = '[\\$](bold red)'
-
-[character.root]
-success_symbol = "#"
-
+[character]
+success_symbol = '\$'
+error_symbol = '\$'
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
@@ -23,7 +18,7 @@ style_user = 'green'
 [hostname]
 ssh_only = false
 aliases = {"epsilon" = "ε", "delta" = "δ"}
-format = '[$hostname]($style)[$ssh_symbol](red):'
+format = '[$hostname]($style)[$ssh_symbol](red) '
 ssh_symbol = '\(ssh\)'
 style = 'green'
 
@@ -32,4 +27,14 @@ style = 'blue'
 
 [time]
 disabled = false
-format = '[\[$time\]]($style)'
+format = '[\[$time\]]($style) '
+
+[cmd_duration]
+disabled = false
+min_time = 2_00
+format = "Took: [$duration]($style)\n"
+
+[status]
+format = '[$symbol$status]($style) '
+symbol = '\$?='
+disabled = false
