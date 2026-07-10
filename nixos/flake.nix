@@ -42,11 +42,14 @@
         "berr@delta" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             config.allowUnfree = true;
+            system = "x86_64-linux";
+            overlays = [
+                (final: prev: { kdePackages = nixpkgs_unstable.legacyPackages.x86_64-linux.kdePackages; })
+                        ];
           };
-          modules = [ ./desktop/home.nix ];
+          modules = [ ./pkgs/kvitals.nix ./desktop/home.nix ];
         };
         "berr@epsilon" = home-manager.lib.homeManagerConfiguration {
-          # inherit pkgs;
           pkgs = import nixpkgs {
             config.allowUnfree = true;
             system = "aarch64-darwin";

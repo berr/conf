@@ -11,14 +11,18 @@
     ../common/development.nix
     ../common/fonts.nix
     ../common/graphical-apps.nix
+    # ../pkgs/kvitals.nix
   ];
 
   home = {
-
     username = "berr";
     homeDirectory = "/home/berr";
     stateVersion = "25.11";
   };
+
+  # home.file."local/share/plasma/plasmoids/org.kde.plasma.kvitals" = {
+  #       source = "${pkgs.plasmoid_kvitals}/share/plasma/plasmoids/KVitals";
+  # };
 
   systemd.user.services.mount_secrets = {
     Unit = {
