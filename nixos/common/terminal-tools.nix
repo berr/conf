@@ -54,5 +54,8 @@
     bind
     nmap
     tcpdump
+
+    cliamp
+    nchat
   ];
 }
