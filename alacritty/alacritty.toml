@@ -1,3 +1,5 @@
+[general]
+import = [ "./kanagawa_dragon.toml" ]
 [font]
 size = 12.0
 

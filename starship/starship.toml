@@ -38,3 +38,6 @@ format = "Took: [$duration]($style)\n"
 format = '[$symbol$status]($style) '
 symbol = '\$?='
 disabled = false
+
+[fill]
+symbol = ' '
