@@ -54,6 +54,5 @@
     bind
     nmap
     tcpdump
-    wireshark
   ];
 }

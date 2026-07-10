@@ -16,6 +16,8 @@ let
     rustup
     uv
 
+    devenv
+
     # Language servers
     lua-language-server
     pyright
