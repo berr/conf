@@ -55,7 +55,9 @@
     nmap
     tcpdump
 
-    # cliamp
-    # nchat
+    yq
+
+    cliamp
+    nchat
   ];
 }
