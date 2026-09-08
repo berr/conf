@@ -11,6 +11,7 @@ let
     audacity
 
     keepassxc
+    thunderbird
 
     picard
 

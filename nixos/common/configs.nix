@@ -26,6 +26,11 @@
     target = "./.config/alacritty";
   };
 
+  home.file.helix = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/helix";
+    target = "./.config/helix";
+  };
+
   home.file.starship = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config/starship/starship.toml";
     target = "./.config/starship.toml";

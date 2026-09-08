@@ -13,14 +13,26 @@ let
     nodejs
     pkg-config
     python315
-    rustup
+
+    rustc
+    cargo
+    clippy
+    rustfmt
+    rust-analyzer
+
+    
     uv
+    helix
 
     devenv
 
     # Language servers
     lua-language-server
     pyright
+    tailwindcss-language-server
+
+    # ai helpers
+    claude-code
   ];
   linux_only_pkgs =
     if pkgs.stdenv.isLinux then
