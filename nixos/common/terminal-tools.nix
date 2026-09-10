@@ -38,6 +38,7 @@
     just
     nixfmt
     rclone
+    sshfs
 
     # Terminal tools
     alacritty
@@ -46,6 +47,7 @@
     lsof
     p7zip
     ripgrep
+    fd
     tmux
     tmuxp
     unrar
@@ -56,6 +58,10 @@
     tcpdump
 
     yq
+
+    cuetools
+    shntool
+    flac
 
     cliamp
     nchat

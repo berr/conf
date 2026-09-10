@@ -10,21 +10,25 @@ let
     gcc
     gnumake
     lazygit
-    nodejs
     pkg-config
-    python315
-
-    rustc
-    cargo
-    clippy
-    rustfmt
-    rust-analyzer
-
-    
-    uv
-    helix
 
     devenv
+
+    helix
+    tree-sitter
+
+    cargo
+    rustc
+    rust-analyzer
+    rustfmt
+    clippy
+
+    python315
+    uv
+    ruff
+    ty
+
+    nodejs
 
     # Language servers
     lua-language-server

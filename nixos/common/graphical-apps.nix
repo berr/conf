@@ -33,6 +33,7 @@ let
         vlc
         obsidian
         super-productivity
+        beets
       ]
     else
       [ ];
