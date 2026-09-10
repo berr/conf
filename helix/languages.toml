@@ -1,0 +1,4 @@
+[editor.language-server.rust-analyzer.config.check]
+check.command = "clippy"
+cargo.features = "all"
+
